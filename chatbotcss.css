@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f2;
+    /* Light pink background */
+}
+
+#chat-bot-container {
+    width: 40%;
+    max-width: 500px;
+    /* Set maximum width for mobile screens */
+    height: 400px;
+    /* Increase height */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    /* Center the chatbot container */
+    background-color: white;
+    /* Light pink background */
+}
+
+#chat-box {
+    height: 345px;
+    /* Adjust height */
+    overflow-y: scroll;
+    padding: 10px;
+    margin: 0;
+    background-color: #f4edf2;
+    /* Light pink background */
+}
+
+.user-message,
+.bot-message {
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: rgb(128, 8, 128);
+    /* Pink */
+    color: #fff;
+    text-align: right;
+}
+
+.bot-message {
+    background-color: violet;
+    /* Purple */
+    color: #fff;
+    text-align: left;
+}
+
+#user-input-container {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+#send-btn {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: rgb(101, 26, 101);
+    /* Pink */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-btn:hover {
+    background-color: violet;
+    /* Darker pink on hover */
+}
