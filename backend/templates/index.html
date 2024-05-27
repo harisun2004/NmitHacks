@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Dataset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5;
+            color: #4a148c;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #6a1b9a;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #8e24aa;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #6a1b9a;
+        }
+        .flash {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .error {
+            background-color: #f44336;
+            color: white;
+        }
+        .success {
+            background-color: #4caf50;
+            color: white;
+        }
+        .info {
+            background-color: #2196f3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Dataset</h1>
+        <form action="/upload_dataset" method="post" enctype="multipart/form-data">
+            <label for="ownerName">Owner Name:</label>
+            <input type="text" id="ownerName" name="ownerName" required>
+            
+            <label for="smartChainAddress">Smart Chain Address:</label>
+            <input type="text" id="smartChainAddress" name="smartChainAddress" required>
+            
+            <label for="datasetName">Dataset Name:</label>
+            <input type="text" id="datasetName" name="datasetName" required>
+            
+            <label for="version">Version:</label>
+            <input type="text" id="version" name="version" required>
+            
+            <label for="licenseTerms">License Terms:</label>
+            <textarea id="licenseTerms" name="licenseTerms" required></textarea>
+            
+            <label for="datasetFile">Upload Dataset:</label>
+            <input type="file" id="datasetFile" name="datasetFile" required>
+            
+            <input type="submit" value="Submit">
+        </form>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+              <li class="flash {{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
